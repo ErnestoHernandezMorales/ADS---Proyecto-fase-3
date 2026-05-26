@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Dashboard Docente";
+}
+
+<div class="container mt-5">
+
+    <h1 class="mb-4">
+        Panel del Docente
+    </h1>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow p-4 text-center">
+
+                <h3>
+                    Avisos
+                </h3>
+
+                <p>
+                    Publicar comunicados importantes.
+                </p>
+
+                <a asp-controller="Avisos"
+                   asp-action="Index"
+                   class="btn btn-primary">
+
+                    Gestionar Avisos
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow p-4 text-center">
+
+                <h3>
+                    Notas
+                </h3>
+
+                <p>
+                    Registrar notas académicas.
+                </p>
+
+                <a asp-controller="Notas"
+                   asp-action="Index"
+                   class="btn btn-success">
+
+                    Gestionar Notas
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow p-4 text-center">
+
+                <h3>
+                    Mensajes
+                </h3>
+
+                <p>
+                    Comunicación con padres.
+                </p>
+
+                <a asp-controller="Mensajes"
+                   asp-action="Index"
+                   class="btn btn-warning">
+
+                    Ver Mensajes
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

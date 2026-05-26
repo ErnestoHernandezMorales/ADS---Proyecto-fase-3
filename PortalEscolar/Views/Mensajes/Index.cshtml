@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Mensajes";
+}
+
+<div class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h1>
+            Mensajes
+        </h1>
+
+        <a class="btn btn-warning">
+            Nuevo Mensaje
+        </a>
+
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <table class="table table-hover">
+
+                <thead class="table-warning">
+
+                    <tr>
+                        <th>Padre</th>
+                        <th>Mensaje</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>María López</td>
+                        <td>Mi hijo faltará mañana por consulta médica.</td>
+                        <td>20/05/2026</td>
+                        <td>
+                            <span class="badge bg-success">
+                                Leído
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Carlos Martínez</td>
+                        <td>¿Cuándo será la entrega de notas?</td>
+                        <td>19/05/2026</td>
+                        <td>
+                            <span class="badge bg-danger">
+                                No leído
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

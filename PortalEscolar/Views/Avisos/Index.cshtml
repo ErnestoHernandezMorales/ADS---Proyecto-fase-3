@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Avisos";
+}
+
+<div class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h1>
+            Gestión de Avisos
+        </h1>
+
+        <a class="btn btn-primary">
+            Nuevo Aviso
+        </a>
+
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <table class="table table-hover">
+
+                <thead class="table-dark">
+
+                    <tr>
+                        <th>Título</th>
+                        <th>Contenido</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Suspensión de clases</td>
+                        <td>No habrá clases el viernes.</td>
+                        <td>20/05/2026</td>
+
+                        <td>
+                            <button class="btn btn-warning btn-sm">
+                                Editar
+                            </button>
+
+                            <button class="btn btn-danger btn-sm">
+                                Eliminar
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Entrega de notas</td>
+                        <td>Las notas estarán disponibles mañana.</td>
+                        <td>18/05/2026</td>
+
+                        <td>
+                            <button class="btn btn-warning btn-sm">
+                                Editar
+                            </button>
+
+                            <button class="btn btn-danger btn-sm">
+                                Eliminar
+                            </button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
