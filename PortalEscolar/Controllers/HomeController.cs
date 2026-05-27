@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PortalEscolar.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Http;
 
 namespace PortalEscolar.Controllers
 {
@@ -8,6 +9,29 @@ namespace PortalEscolar.Controllers
     {
         public IActionResult Index()
         {
+            var usuario =
+                HttpContext.Session.GetString("usuario");
+
+            var rol =
+                HttpContext.Session.GetString("rol");
+
+            if (usuario != null)
+            {
+                if (rol == "DOCENTE")
+                {
+                    return RedirectToAction(
+                        "Docente",
+                        "Dashboard");
+                }
+
+                else
+                {
+                    return RedirectToAction(
+                        "Padre",
+                        "Dashboard");
+                }
+            }
+
             return View();
         }
 

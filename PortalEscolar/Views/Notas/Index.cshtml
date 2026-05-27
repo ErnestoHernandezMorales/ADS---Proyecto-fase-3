@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<PortalEscolar.Models.Nota>
+
+@{
     ViewData["Title"] = "Notas";
 }
 
@@ -10,8 +12,12 @@
             Registro de Notas
         </h1>
 
-        <a class="btn btn-success">
+        <a asp-controller="Notas"
+           asp-action="Crear"
+           class="btn btn-success">
+
             Nueva Nota
+
         </a>
 
     </div>
@@ -30,48 +36,28 @@
                         <th>Actividad</th>
                         <th>Nota</th>
                         <th>Periodo</th>
-                        <th>Acciones</th>
                     </tr>
 
                 </thead>
 
                 <tbody>
 
-                    <tr>
-                        <td>Juan Pérez</td>
-                        <td>Matemática</td>
-                        <td>Examen Parcial</td>
-                        <td>8.5</td>
-                        <td>I</td>
+                    @foreach (var nota in Model)
+                    {
+                        <tr>
 
-                        <td>
-                            <button class="btn btn-warning btn-sm">
-                                Editar
-                            </button>
+                            <td>@nota.estudiante</td>
 
-                            <button class="btn btn-danger btn-sm">
-                                Eliminar
-                            </button>
-                        </td>
-                    </tr>
+                            <td>@nota.materia</td>
 
-                    <tr>
-                        <td>Ana López</td>
-                        <td>Ciencias</td>
-                        <td>Tarea</td>
-                        <td>9.0</td>
-                        <td>I</td>
+                            <td>@nota.actividad</td>
 
-                        <td>
-                            <button class="btn btn-warning btn-sm">
-                                Editar
-                            </button>
+                            <td>@nota.nota</td>
 
-                            <button class="btn btn-danger btn-sm">
-                                Eliminar
-                            </button>
-                        </td>
-                    </tr>
+                            <td>@nota.periodo</td>
+
+                        </tr>
+                    }
 
                 </tbody>
 

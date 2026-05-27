@@ -14,37 +14,53 @@
                     Iniciar Sesión
                 </h2>
 
-                <form>
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger">
+                        @ViewBag.Error
+                    </div>
+                }
+
+                <form asp-controller="Login"
+                      asp-action="Acceder"
+                      method="post">
 
                     <div class="mb-3">
+
                         <label class="form-label">
                             Correo
                         </label>
 
                         <input type="email"
+                               name="correo"
                                class="form-control"
-                               placeholder="Ingrese su correo" />
+                               placeholder="Ingrese su correo"
+                               required />
+
                     </div>
 
                     <div class="mb-3">
+
                         <label class="form-label">
                             Contraseña
                         </label>
 
                         <input type="password"
+                               name="password"
                                class="form-control"
-                               placeholder="Ingrese su contraseña" />
+                               placeholder="Ingrese su contraseña"
+                               required />
+
                     </div>
 
                     <div class="d-grid">
 
-                        <a asp-controller="Dashboard"
-                           asp-action="Docente"
-                           class="btn btn-primary btn-lg">
+                        <button type="submit"
+                                class="btn btn-primary btn-lg">
 
                             Entrar
 
-                        </a>
+                        </button>
 
                     </div>
 
