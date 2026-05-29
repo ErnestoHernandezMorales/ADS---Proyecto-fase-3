@@ -53,5 +53,11 @@ namespace PortalEscolar.Controllers
 
             return View("Index");
         }
+        public IActionResult CerrarSesion()
+        {
+            HttpContext.Session.Clear();
+
+            return RedirectToAction("Index");
+        }
     }
 }

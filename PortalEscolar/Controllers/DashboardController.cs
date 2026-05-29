@@ -8,5 +8,12 @@ namespace PortalEscolar.Controllers
         {
             return View();
         }
+
+        public IActionResult Padre()
+        {
+            return View();
+        }
     }
+
+
 }

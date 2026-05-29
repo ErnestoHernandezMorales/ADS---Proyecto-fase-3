@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Panel Padre";
+}
+
+<div class="container mt-5">
+
+    <h1 class="mb-4">
+        Bienvenido Padre de Familia
+    </h1>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow text-center p-4">
+
+                <h1>📢</h1>
+
+                <h3>Avisos</h3>
+
+                <p>
+                    Consulte los comunicados escolares.
+                </p>
+
+                <a asp-controller="Avisos"
+                   asp-action="Index"
+                   class="btn btn-primary">
+
+                    Ver Avisos
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow text-center p-4">
+
+                <h1>📝</h1>
+
+                <h3>Notas</h3>
+
+                <p>
+                    Consulte las calificaciones.
+                </p>
+
+                <a asp-controller="Notas"
+                   asp-action="Index"
+                   class="btn btn-success">
+
+                    Ver Notas
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow text-center p-4">
+
+                <h1>💬</h1>
+
+                <h3>Mensajes</h3>
+
+                <p>
+                    Comunicación con docentes.
+                </p>
+
+                <a asp-controller="Mensajes"
+                   asp-action="Index"
+                   class="btn btn-warning">
+
+                    Ver Mensajes
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

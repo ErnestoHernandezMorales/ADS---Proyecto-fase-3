@@ -12,17 +12,20 @@
             Registro de Notas
         </h1>
 
-        <a asp-controller="Notas"
-           asp-action="Crear"
-           class="btn btn-success">
+        @if (Context.Session.GetString("rol") == "DOCENTE")
+        {
+            <a asp-controller="Notas"
+               asp-action="Crear"
+               class="btn btn-success">
 
-            Nueva Nota
+                Nueva Nota
 
-        </a>
+            </a>
+        }
 
     </div>
 
-    <div class="card shadow">
+    <div class="card shadow-lg">
 
         <div class="card-body">
 
@@ -31,32 +34,53 @@
                 <thead class="table-success">
 
                     <tr>
+
                         <th>Estudiante</th>
+
                         <th>Materia</th>
+
                         <th>Actividad</th>
+
                         <th>Nota</th>
+
                         <th>Periodo</th>
+
                     </tr>
 
                 </thead>
 
                 <tbody>
 
-                    @foreach (var nota in Model)
+                    @if (Model.Count == 0)
                     {
                         <tr>
 
-                            <td>@nota.estudiante</td>
+                            <td colspan="5" class="text-center">
 
-                            <td>@nota.materia</td>
+                                No hay notas registradas.
 
-                            <td>@nota.actividad</td>
-
-                            <td>@nota.nota</td>
-
-                            <td>@nota.periodo</td>
+                            </td>
 
                         </tr>
+                    }
+                    else
+                    {
+                        @foreach (var nota in Model)
+                        {
+                            <tr>
+
+                                <td>@nota.estudiante</td>
+
+                                <td>@nota.materia</td>
+
+                                <td>@nota.actividad</td>
+
+                                <td>@nota.nota</td>
+
+                                <td>@nota.periodo</td>
+
+                            </tr>
+                        }
                     }
 
                 </tbody>

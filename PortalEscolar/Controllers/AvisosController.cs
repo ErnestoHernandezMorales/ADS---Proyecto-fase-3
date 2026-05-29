@@ -23,12 +23,26 @@ namespace PortalEscolar.Controllers
 
         public IActionResult Crear()
         {
+            var rol = HttpContext.Session.GetString("rol");
+
+            if (rol != "DOCENTE")
+            {
+                return RedirectToAction("Index");
+            }
+
             return View();
         }
 
         [HttpPost]
         public IActionResult Crear(Aviso aviso)
         {
+            var rol = HttpContext.Session.GetString("rol");
+
+            if (rol != "DOCENTE")
+            {
+                return RedirectToAction("Index");
+            }
+
             aviso.fecha_publicacion = DateTime.Now;
 
             _context.Avisos.Add(aviso);

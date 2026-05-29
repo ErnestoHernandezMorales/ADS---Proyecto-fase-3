@@ -23,6 +23,13 @@ namespace PortalEscolar.Controllers
 
         public IActionResult Crear()
         {
+            var rol = HttpContext.Session.GetString("rol");
+
+            if (rol != "DOCENTE")
+            {
+                return RedirectToAction("Index");
+            }
+
             return View();
         }
 
